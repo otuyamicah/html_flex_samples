@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flexbox sample:alternating grid</title>
+    <title>flexbox sample:3x3 grid, constrained proportion(1:1)</title>
 <style>
     *{
         margin: 0%;
@@ -13,27 +13,19 @@
 
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content:space-evenly;
         background-color: #e6e6e6;
         
-    }
-
-    .item {
-        width:30%;
-        height: 100px;
-        margin-bottom: 2%;
-
-    }
-
-    .item:nth-child(3n) {
-        width: 100%;
     }
 
 
   
     .item {
+        width: 10%;
+        padding-bottom: 5%;
+        margin-bottom: 2%;
         padding: 5%;
-        margin: 4%;
+        margin: 5%;
         background-color: #8ba9e6;
         border: 1px solid #4a81ee;
         border-radius: 5px 5px;
@@ -49,6 +41,11 @@
         <div class="item"></div>
         <div class="item"></div>
         <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
     </div>
     
 </body>

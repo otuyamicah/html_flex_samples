@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox sample:3x3 grid, constrained proportion(1:1)</title>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+       
+    }
+    .container {
+
+        display: flex;
+        flex-flow: column wrap;
+        align-content: space-between;
+        height: 665px;
+        background-color: #e6e6e6;
+        counter-reset: items;
+        width: 60%;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .item {
+        width: 10%;
+        padding:20px;
+        margin:8px;
+        background-color: #8ba9e6;
+        border: 1px solid #4a81ee;
+        border-radius: 5px 5px;
+        margin-bottom: 2%;
+        text-align: center;
+        
+    }
+
+    .item::before{
+       counter-increment: items;
+       content: counter(items); 
+    }
+
+    /* Re-order items into rows */
+    .item:nth-child(3n+1) {order: 1; }
+    .item:nth-child(3n+2) {order: 2; }
+    .item:nth-child(3n)   {order: 3; }
+    
+    
+    
+    .container::before,
+    .container::after {
+        content:"";
+        flex-basis: 100%;
+        width: 0%;
+        order:5;
+    }
+
+
+
+
+
+  
+ 
+
+</style>
+</head>
+<body>
+
+   
+    <divc class="container">
+        <div class="item" style="height: 140px"></div>
+        <div class="item" style="height: 190px"></div>
+        <div class="item" style="height: 170px"></div>
+        <div class="item" style="height: 120px"></div>
+        <div class="item" style="height: 160px"></div>
+        <div class="item" style="height: 180px"></div>
+        <div class="item" style="height: 140px"></div>
+        <div class="item" style="height: 150px"></div>
+        <div class="item" style="height: 170px"></div>
+        <div class="item" style="height: 170px"></div>
+    </div>
+    
+</body>
+</html> 
